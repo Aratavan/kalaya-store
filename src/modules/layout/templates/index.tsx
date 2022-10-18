@@ -18,10 +18,10 @@ const Layout: React.FC<Props> = ({ children }) => {
             <Header/>
             <Line/>
             <main className="relative bg-white h-full">{children}</main>
-            <LandingPage/>
+            {/* <LandingPage/> */}
             {/* <Login/> */}
             {/* <Signup/> */}
-            {/* <CartPanel/> */}
+            <CartPanel/>
          </div>
     )
 }
