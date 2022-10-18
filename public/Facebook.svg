@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="20" height="20"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <text id="Langauge" transform="translate(-146 -158)" fill="#707070" font-size="20" font-family="HelveticaNeue, Helvetica Neue"><tspan x="0" y="19">Langauge</tspan></text>
+    <path id="Path_23963" data-name="Path 23963" d="M46.661,31.744H43.926V41.763H39.783V31.744H37.812V28.223h1.971V25.944a3.885,3.885,0,0,1,4.18-4.181l3.069.013v3.418H44.805a.843.843,0,0,0-.879.96v2.072h3.1Z" transform="translate(-32.812 -21.763)" fill="#707070"/>
+  </g>
+</svg>
