@@ -1,15 +1,15 @@
 const Ordertracker = () => {
     return (
-        <div className="tracking-container flex py-[15px]">
-            <div className="label font-normal font-para text-black text-medium align-middle justify-center flex flex-col px-4">
-                <span>Order ID</span>
+        <div className="tracking-container flex py-[15px] mr-6">
+            <div className="label font-normal text-black text-small align-middle justify-center flex flex-col px-4">
+                <span className="font-nunito">Order ID</span>
             </div>
-            <div className="tracking-input w-[195px] border border-r-0 rounded">
-                <input className="w-full h-full bg-white"></input>
+            <div className="tracking-input w-[210px] h-[50px] p-[5px] border border-r-0 rounded">
+                <input className="w-full h-full bg-white outline-none"></input>
             </div>
-            <div className="tracking-btn text-logo px-5 py-4 text-medium font-para border rounded">
+            <div className="tracking-btn text-logo px-5 py-3 h-[50px] text-small font-nunito font-bolder border rounded cursor-pointer" style={{ border: 'solid 1.5px #9a3938;' }}>
                 <span>
-                    Track Order
+                    TRACK ORDER
                 </span>
             </div>
         </div>

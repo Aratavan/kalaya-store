@@ -2,7 +2,7 @@ const LandingPage = () => {
     return (
         <div>
             {/* banner section */}
-            <div  className="banner h-[668px] bg-cover bg-center bg-[url('/Home_BG_with_Ground_Nut@2x.png')]">
+            <div className="banner h-[668px] bg-cover bg-center bg-[url('/Home_BG_with_Ground_Nut@2x.png')]">
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 pt-24 pl-40">
                         <p className="text-base text-logo text-lg font-semibold mt-4 font-nunito">Eat Healthy To Be Happy</p>
@@ -23,9 +23,9 @@ const LandingPage = () => {
             </div>
 
             {/* Groundnut oil for family (3rd section)  */}
-            <div className="grid grid-cols-1 pl-40 bg-[#fff6e0] h-[768px]">
-                <div className="bg-no-repeat bg-right-bottom bg-[url('/BG.png')]" style={{ height: '80vh' }}>
-                    <div className="container mx-auto mt-52">
+            <div className="grid grid-cols-1 pl-40 bg-[#fff6e0] h-[700px]">
+                <div className="bg-no-repeat bg-right-bottom bg-[url('/BG.png')]">
+                    <div className="container mx-auto mt-48">
                         <p className="font-semibold font-georgia text-[34px] text-black10">We source organically grown groundnut<br />from family owned farms</p>
                         <p className="mt-5 font-nunito" style={{ fontSize: 'larger', lineHeight: '34px', color: '#101010' }}>Discover the traditional goodness of groundnut oil, in an<br />
                             advanced cold press method. Bring home oil today, and<br />
@@ -89,7 +89,7 @@ const LandingPage = () => {
                         </div>
                     </form>
                 </div>
-                <p className="text-center font-nunito" style={{ color: '#414141' }}>© 2022 Kalaya. All Rights Reserved.</p>
+                <p className="text-center font-nunito pb-[300px]" style={{ color: '#414141' }}>© 2022 Kalaya. All Rights Reserved.</p>
             </div>
         </div>
     )
