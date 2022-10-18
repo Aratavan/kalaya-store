@@ -2,12 +2,12 @@ const LandingPage = () => {
     return (
         <div>
             {/* banner section */}
-            <div className="bg-cover bg-center bg-[url('/Home_BG_with_Ground_Nut@2x.png')]" style={{ height: '85vh', margin: 'auto' }}>
+            <div  className="banner h-[668px] bg-cover bg-center bg-[url('/Home_BG_with_Ground_Nut@2x.png')]">
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-1 pt-24 pl-20">
+                    <div className="grid grid-cols-1 pt-24 pl-40">
                         <p className="text-base text-logo text-lg font-semibold mt-4 font-nunito">Eat Healthy To Be Happy</p>
-                        <h1 className="text-4xl font-semibold mt-4 leading-snug font-georgia">Tasty & <br />Healthy Oil</h1>
-                        <p className="text-base text-logo  text-lg font-semibold mt-4 font-nunito">Rich Aroma | Authentic Taste | Lowers Cholesterol</p>
+                        <h1 className="text-[65px] font-semibold mt-4 leading-snug font-georgia">Tasty & <br />Healthy Oil</h1>
+                        <p className="text-base text-logo  text-lg font-bold mt-4 font-nunito">Rich Aroma | Authentic Taste | Lowers Cholesterol</p>
                         <button className="h-12 mt-7 px-6 font-semibold rounded-md text-white font-nunito" type="submit" style={{ background: '#9a3938', width: '170px' }}>ORDER NOW</button>
                     </div>
 
@@ -15,17 +15,18 @@ const LandingPage = () => {
             </div>
 
             {/* Health benefits cold oil (2nd section) */}
-            <div className="grid grid-cols-1">
-                <p className="mt-12 mb-10 text-4xl font-semibold text-center font-georgia">Health benefits of cold pressed oil</p>
-                <div className="bg-contain bg-no-repeat bg-[url('/FullBG@2x.png')]" style={{ height: '70vh', width: '45%', margin: 'auto' }}></div>
+            <div className="health-section grid grid-cols-1">
+                <p className="mt-12 mb-10 text-[45px] font-bold text-center font-georgia">Health benefits of cold pressed oil</p>
+                <div className="mb-10 flex flex-row justify-center">
+                    <img className="w-[45%]" src="/FullBG@2x.png"></img>
+                </div>
             </div>
 
             {/* Groundnut oil for family (3rd section)  */}
-            <div className="grid grid-cols-1" style={{ background: '#fff6e0' }}>
-                {/* <div className="bg-cover bg-center bg-[url('/Icons/PNG/BG.png')]" style={{height:'90vh', margin:'auto'}}></div> */}
+            <div className="grid grid-cols-1 pl-40 bg-[#fff6e0] h-[768px]">
                 <div className="bg-no-repeat bg-right-bottom bg-[url('/BG.png')]" style={{ height: '80vh' }}>
-                    <div className="container mx-auto mt-40">
-                        <p className="font-semibold font-georgia" style={{ fontSize: '34px', color: '#101010' }}>We source organically grown groundnut<br />from family owned farms</p>
+                    <div className="container mx-auto mt-52">
+                        <p className="font-semibold font-georgia text-[34px] text-black10">We source organically grown groundnut<br />from family owned farms</p>
                         <p className="mt-5 font-nunito" style={{ fontSize: 'larger', lineHeight: '34px', color: '#101010' }}>Discover the traditional goodness of groundnut oil, in an<br />
                             advanced cold press method. Bring home oil today, and<br />
                             experience love in its healthiest form.</p>
@@ -35,8 +36,8 @@ const LandingPage = () => {
             </div>
 
             {/* Landing page Subscribe section (4th section) */}
-            <div className="bg-no-repeat bg-right-bottom bg-[url('/Background@2x.png')]" style={{ height: '80vh', margin: 'auto' }}>
-                <div className="container mx-auto grid grid-cols-3 gap-3 mt-12 mb-12">
+            <div className="bg-no-repeat px-[100px] bg-right-bottom bg-[url('/Background@2x.png')]" >
+                <div className="container grid grid-cols-3 gap-3 mt-12 mb-12">
                     <div className="flex">
                         <div className="flex-none w-24 relative">
                             <img src="/Artboard_1@2x.png" alt="" className="absolute inset-0" loading="lazy" style={{ width: '90px', height: '60px', marginTop: '25px' }} />
