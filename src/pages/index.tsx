@@ -12,8 +12,8 @@ const Home: NextPageWithLayout = () => {
   return (
    <>
    <Line/>
-   <div>Kalaya Store Front</div>
-   <p>marathon</p>
+   {/* <div>Kalaya Store Front</div> */}
+   {/* <p>marathon</p> */}
    </>
   )
 }
