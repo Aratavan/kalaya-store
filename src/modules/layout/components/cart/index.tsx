@@ -11,6 +11,7 @@ const Cart = () => {
                 Cart
             </div>
         </div>
+        
     )
 }
 
