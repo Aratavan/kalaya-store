@@ -1,6 +1,3 @@
-
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
-
 const Artbar = () => {
     return (
         <div className='art-container p-5 bg-artgrey text-artblack h-12 font-nunito'>
