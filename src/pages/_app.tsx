@@ -15,9 +15,9 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout<{ dehydratedState?: 
       <Hydrate state={pageProps.dehydratedState}>
         <CartProvider>
           <StoreProvider>
-            {/* <AccountProvider> */}
+            <AccountProvider>
               {getLayout(<Component {...pageProps} />)}
-            {/* </AccountProvider> */}
+            </AccountProvider>
           </StoreProvider>
         </CartProvider>
       </Hydrate>

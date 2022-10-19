@@ -1,4 +1,5 @@
 import { medusaClient } from "@lib/config";
+import { handleError } from "@lib/util/handle-error";
 import { Region } from "@medusajs/medusa";
 import {
     useCart,
@@ -114,9 +115,7 @@ export const StoreProvider = ({ children }: StoreProps) => {
                     storeRegion(regionId, countryCode)
                 },
                 onError: (error) => {
-                    if (process.env.NODE_ENV === "development") {
-                        console.error(error)
-                      }
+                    handleError(error)
                 }
             })
     }
@@ -148,9 +147,7 @@ export const StoreProvider = ({ children }: StoreProps) => {
 
                 },
                 onError: (error) => {
-                    if (process.env.NODE_ENV === "development") {
-                        console.error(error)
-                      }
+                    handleError(error)
                 }
             }
         )
@@ -169,9 +166,7 @@ export const StoreProvider = ({ children }: StoreProps) => {
                     ensureRegion(cart.region)
                 },
                 onError: (error) => {
-                    if (process.env.NODE_ENV === "development") {
-                        console.error(error)
-                      }
+                    handleError(error)
                 }
             }
         )
@@ -223,9 +218,7 @@ export const StoreProvider = ({ children }: StoreProps) => {
                     storeCart(cart.id)
                 },
                 onError: (error) => {
-                    if (process.env.NODE_ENV === "development") {
-                        console.error(error)
-                      }
+                    handleError(error)
                 }
             }
         )
@@ -240,9 +233,7 @@ export const StoreProvider = ({ children }: StoreProps) => {
                     storeCart(cart.id)
                 },
                 onError: (error) => {
-                    if (process.env.NODE_ENV === "development") {
-                        console.error(error)
-                      }
+                    handleError(error)
                 }
             }
         )
@@ -257,9 +248,7 @@ export const StoreProvider = ({ children }: StoreProps) => {
                     storeCart(cart.id)
                 },
                 onError: (error) => {
-                    if (process.env.NODE_ENV === "development") {
-                        console.error(error)
-                      }
+                    handleError(error)
                 }
             }
         )

@@ -8,15 +8,15 @@ import { useMutation } from "react-query";
 
 export enum LOGIN_VIEW {
     SIGN_IN = "sign-in",
-    RIGISTER="register"
+    RIGISTER = "register"
 }
 
 interface AccountContext {
-    customer? : Omit<Customer, "password_hash">
+    customer?: Omit<Customer, "password_hash">
     retrievingCustomer: boolean
-    loginView:[LOGIN_VIEW,  React.Dispatch<React.SetStateAction<LOGIN_VIEW>>]
-    checkSession: ()=> void
-    refetchCustomer:() => void
+    loginView: [LOGIN_VIEW, React.Dispatch<React.SetStateAction<LOGIN_VIEW>>]
+    checkSession: () => void
+    refetchCustomer: () => void
     handleLogout: () => void
 }
 
@@ -26,7 +26,7 @@ interface AccountProviderProps {
 
 const KalayaAccountContext = createContext<AccountContext | null>(null)
 
-export const useAccount = ()=> {
+export const useAccount = () => {
     const context = useContext(KalayaAccountContext)
 
     if (context === null) {
@@ -36,7 +36,7 @@ export const useAccount = ()=> {
     return context
 }
 
-const handleDeleteSession =() => {
+const handleDeleteSession = () => {
     return medusaClient.auth.deleteSession()
 }
 
@@ -49,14 +49,14 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
         isLoading: retrievingCustomer,
         refetch,
         remove
-    } = useMeCustomer({ onError:() => {}})
+    } = useMeCustomer({ onError: () => { } })
 
     const loginView = useState<LOGIN_VIEW>(LOGIN_VIEW.SIGN_IN)
 
     const router = useRouter()
 
     const checkSession = useCallback(() => {
-        if(!customer && !retrievingCustomer) {
+        if (!customer && !retrievingCustomer) {
             router.push("/account/login")
         }
     }, [customer, retrievingCustomer, router])
@@ -65,7 +65,7 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
 
     const handleLogout = () => {
         useDeleteSession.mutate(undefined, {
-            onSuccess : () => {
+            onSuccess: () => {
                 remove()
                 loginView[1](LOGIN_VIEW.SIGN_IN)
                 router.push("/")
@@ -74,15 +74,15 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
     }
 
     return (
-        <KalayaAccountContext.Provider 
-        value={{
-            customer,
-            retrievingCustomer,
-            loginView,
-            checkSession,
-            refetchCustomer: refetch,
-            handleLogout
-        }}
+        <KalayaAccountContext.Provider
+            value={{
+                customer,
+                retrievingCustomer,
+                loginView,
+                checkSession,
+                refetchCustomer: refetch,
+                handleLogout
+            }}
         >
             {children}
         </KalayaAccountContext.Provider>

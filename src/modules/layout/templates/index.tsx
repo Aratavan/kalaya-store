@@ -16,11 +16,13 @@ const Layout: React.FC<Props> = ({ children }) => {
             <Artbar/>
             <Header/>
             <Line/>
-            <main className="relative bg-white h-full">{children}</main>
+            <main className="relative bg-white h-full">
+                {children}
+            </main>
             {/* <LandingPage/> */}
             {/* <Login/> */}
             {/* <Signup/> */}
-            <CartPanel/>
+            {/* <CartPanel/> */}
          </div>
     )
 }
