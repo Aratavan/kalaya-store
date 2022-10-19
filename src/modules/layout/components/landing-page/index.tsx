@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const LandingPage = () => {
     return (
         <div>
@@ -8,7 +10,9 @@ const LandingPage = () => {
                         <p className="text-base text-logo text-lg font-semibold mt-4 font-nunito">Eat Healthy To Be Happy</p>
                         <h1 className="text-[65px] font-semibold mt-4 leading-snug font-georgia">Tasty & <br />Healthy Oil</h1>
                         <p className="text-base text-logo  text-lg font-bold mt-4 font-nunito">Rich Aroma | Authentic Taste | Lowers Cholesterol</p>
-                        <button className="h-12 mt-7 px-6 font-semibold rounded-md text-white font-nunito" type="submit" style={{ background: '#9a3938', width: '170px' }}>ORDER NOW</button>
+                        <button className="h-12 mt-7 px-6 font-semibold rounded-md text-white font-nunito" type="submit" style={{ background: '#9a3938', width: '170px' }}>
+                            <Link href="/product-details" >ORDER NOW </Link>
+                        </button>
                     </div>
 
                 </div>

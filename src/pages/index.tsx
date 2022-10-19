@@ -5,15 +5,21 @@ import styles from '../styles/Home.module.css'
 import { NextPageWithLayout } from "types/global"
 import { ReactElement } from 'react'
 import Layout from '@modules/layout/templates'
-import BreadCrumb from '@modules/common/breadcrumb'
 import Line from '@modules/common/line'
+import LandingPage from '@modules/layout/components/landing-page'
+import { getProducts } from '@lib/data'
 
 const Home: NextPageWithLayout = () => {
+  const products = getProducts()
+  console.log(products)
+  // products.then((data) => {
+  //   console.log(data)
+  // })
+
   return (
    <>
    <Line/>
-   {/* <div>Kalaya Store Front</div> */}
-   {/* <p>marathon</p> */}
+   <LandingPage/>
    </>
   )
 }
