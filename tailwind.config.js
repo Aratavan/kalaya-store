@@ -12,7 +12,6 @@ module.exports = {
         georgia: ['GEORGIA'],
         nunito: ['NUNITOSANS'],
         montserrat:['MONTSERRAT']
-
       },
       colors: {
         transparent: 'transparent',
@@ -21,6 +20,7 @@ module.exports = {
         black21:"#211d1d",
         black3e:"#3e2a2a",
         black1d:"#1d1c1c",
+        black1a:"#1a1919",
         artgrey: '#f6f6f6',
         artblack:'#2c2c2c',
         logo:'#9a3938',
@@ -29,7 +29,9 @@ module.exports = {
         grey69:"#696969",
         grey84:"#848484",
         greybf:"#bfbfbf",
-        greyf9:"#f9f9f9"
+        greyf9:"#f9f9f9",
+        grey70:"#707070",
+        brown:"#9a3938",
       },
       fontSize: {
         xsmall:'14px',
@@ -37,10 +39,12 @@ module.exports = {
         medium:'18px',
         xmedium:'20px',
         xxmedium:'22px',
+        xxxmedium:'25px',
         large:'30px',
         xlarge:'36px'
       }
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 }
