@@ -3,6 +3,7 @@ import Artbar from "@modules/layout/components/art-bar"
 import Header from "../components/header";
 import Line from "@modules/common/line";
 import LandingPage from "../components/landing-page";
+import OrderSummaryTemplate from "@modules/order-summary/templates";
 interface Props {
     children: React.ReactNode;
 }
@@ -13,9 +14,10 @@ const Layout: React.FC<Props> = ({ children }) => {
             <Artbar/>
             <Header/>
             <Line/>
-            <main className="relative bg-white h-full">
+            <OrderSummaryTemplate/>
+            {/* <main className="relative bg-white h-full">
                 {children}
-            </main>
+            </main> */}
          </div>
     )
 }

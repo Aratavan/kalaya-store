@@ -1,6 +1,6 @@
 const AddressSummary = () => {
     return (
-        <div className="address-body flex flex-col">
+        <div className="address-body ">
             <div className="address-item name font-nunito font-bold text-[24px] text-artblack text-nunito">
                 Mr John Smith
             </div>

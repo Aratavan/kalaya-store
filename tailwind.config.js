@@ -21,6 +21,7 @@ module.exports = {
         black3e:"#3e2a2a",
         black1d:"#1d1c1c",
         black1a:"#1a1919",
+        black03:"#030303",
         artgrey: '#f6f6f6',
         artblack:'#2c2c2c',
         logo:'#9a3938',
@@ -31,6 +32,7 @@ module.exports = {
         greybf:"#bfbfbf",
         greyf9:"#f9f9f9",
         grey70:"#707070",
+        greye5:"#e5e5e5",
         brown:"#9a3938",
       },
       fontSize: {
