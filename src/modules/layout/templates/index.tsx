@@ -2,8 +2,6 @@ import React from "react"
 import Artbar from "@modules/layout/components/art-bar"
 import Header from "../components/header";
 import Line from "@modules/common/line";
-import LandingPage from "../components/landing-page";
-import OrderSummaryTemplate from "@modules/order-summary/templates";
 interface Props {
     children: React.ReactNode;
 }
@@ -11,14 +9,13 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => {
     return (
         <div className="kalaya-container">
-            <Artbar/>
-            <Header/>
-            <Line/>
-            <OrderSummaryTemplate/>
-            {/* <main className="relative bg-white h-full">
+            <Artbar />
+            <Header />
+            <Line />
+            <main className="relative bg-white h-full">
                 {children}
-            </main> */}
-         </div>
+            </main>
+        </div>
     )
 }
 

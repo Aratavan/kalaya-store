@@ -1,5 +1,6 @@
 import BreadCrumb from "@modules/common/breadcrumb"
 import Line from "@modules/common/line"
+import ProductFooter from "@modules/common/product-footer"
 import QuantityCounter from "@modules/common/quantity-counter"
 import Layout from "@modules/layout/templates"
 import { ReactElement } from "react"
@@ -85,13 +86,15 @@ const ProductDetails: NextPageWithLayout = () => {
                         </div>
 
                     </div>
-                    <div className="section-why-image w-[35%] h-[270px] ml-6">
-                        <div className="w-[432px] h-[270px] bg-grey69">
+                    <div className="section-why-image w-[35%] mt-[-50px] ml-6">
+                        <div className="bg-grey69">
+                            <img src="/ProductPage_Groundnut_image@2x.png" alt="nuts" />
                         </div>
                     </div>
 
                 </div>
             </div>
+            <ProductFooter />
         </>
     )
 
