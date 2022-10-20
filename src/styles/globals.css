@@ -130,3 +130,11 @@ a {
 .step-progress strong {
   display: block;
 }
+
+.orderSummary{
+    padding: 40px;
+    margin: 20px;
+}
+.product-checkout-container{
+  padding: 30px 60px 20px 60px;
+}
