@@ -131,10 +131,48 @@ a {
   display: block;
 }
 
-.orderSummary{
-    padding: 40px;
-    margin: 20px;
+.orderSummary {
+  padding: 40px;
+  margin: 20px;
 }
-.product-checkout-container{
+
+.product-checkout-container {
   padding: 30px 60px 20px 60px;
+}
+
+/* Tabs css */
+.tab-list {
+  display: flex;
+  list-style: none;
+  font-size: 18px;
+}
+
+.tabs-account {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 43px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 2px);
+  height: 4px;
+  background: #9a3938;
+}
+
+.content {
+  display: none;
+  padding: 10px;
+}
+
+.active-content {
+  display: contents;
 }
