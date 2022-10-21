@@ -13,7 +13,7 @@ import React, {
 import { Product, Variant } from "types/medusa";
 import { useStore } from "./store-context";
 
-interface ProductContext {
+export interface ProductContext {
     formattedPrice: string
     quantity: number
     disabled: boolean
@@ -25,6 +25,8 @@ interface ProductContext {
     increaseQuantity: () => void
     decreaseQuantity: () => void
     addToCart: () => void
+    selectVariant: (item: Variant) => void
+    selectedVariantId: string
 }
 
 interface ProductProviderProps {
@@ -34,18 +36,22 @@ interface ProductProviderProps {
 
 const ProductActionContext = createContext<ProductContext | null>(null)
 
-export const KalayaProductProvide = ({ product, children }: ProductProviderProps) => {
+export const KalayaProductProvider = ({ product, children }: ProductProviderProps) => {
 
     const [quantity, setQuantity] = useState<number>(1)
     const [options, setOptions] = useState<Record<string, string>>({})
     const [maxQuantityMet, setMaxQuantityMet] = useState<boolean>(false)
     const [inStock, setInStock] = useState<boolean>(true)
+    const [selectedVariantId, setVariant] = useState<string>("")
 
     const { addItem } = useStore()
     const { cart } = useCart()
     const { variants } = product
 
     useEffect(() => {
+
+        // init the variant
+        setVariant(product.variants[0].id)
         // initialize the option state
         const optionObj: Record<string, string> = {}
         for (const option of product.options) {
@@ -53,6 +59,12 @@ export const KalayaProductProvide = ({ product, children }: ProductProviderProps
         }
         setOptions(optionObj)
     }, [product])
+
+    const selectVariant = (variant: Variant) => {
+        if(variant?.id) {
+            setVariant(variant.id)
+        }
+    }
 
 
     // memoized record of the product's variants
@@ -119,9 +131,9 @@ export const KalayaProductProvide = ({ product, children }: ProductProviderProps
     }
 
     const addToCart = () => {
-        if (variant) {
+        if (selectedVariantId) {
             addItem({
-                variantId: variant.id,
+                variantId: selectedVariantId,
                 quantity,
             })
         }
@@ -161,6 +173,8 @@ export const KalayaProductProvide = ({ product, children }: ProductProviderProps
                 decreaseQuantity,
                 increaseQuantity,
                 formattedPrice,
+                selectVariant,
+                selectedVariantId
             }}
         >
             {children}
@@ -172,9 +186,9 @@ export const KalayaProductProvide = ({ product, children }: ProductProviderProps
 export const useProductActions = () => {
     const context = useContext(ProductActionContext)
     if (context === null) {
-      throw new Error(
-        "useProductActionContext must be used within a ProductActionProvider"
-      )
+    //   throw new Error(
+    //     "useProductActionContext must be used within a ProductActionProvider"
+    //   )
     }
     return context
   }

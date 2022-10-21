@@ -1,6 +1,14 @@
+import { useCheckout } from "@lib/context/checkout-context"
 import AddressSummary from "@modules/common/address-summary"
 
 const BillingAddress = () => {
+    const {
+        sameAsBilling: { state: checked, toggle: onChange },
+        editAddresses: { state: isEdit, toggle: setEdit },
+        setAddresses,
+        handleSubmit,
+        cart,
+      } = useCheckout()
 
     return (
         <div className="billing-address my-8">

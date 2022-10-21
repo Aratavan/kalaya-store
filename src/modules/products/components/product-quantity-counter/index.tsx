@@ -1,8 +1,8 @@
-import { useProductActions } from "@lib/context/product-context"
+import { ProductContext, useProductActions } from "@lib/context/product-context"
 
-const QuantityCounter:React.FC = () => {
+const ProductQuantityCounter:React.FC = () => {
 
-    const {variant, quantity, increaseQuantity, decreaseQuantity} = useProductActions()
+    const {quantity, increaseQuantity, decreaseQuantity} = useProductActions() as ProductContext
 
     return (
         <div className="quantity-box flex flex-row rounded border w-fit">
@@ -20,4 +20,4 @@ const QuantityCounter:React.FC = () => {
 
 }
 
-export default QuantityCounter
+export default ProductQuantityCounter

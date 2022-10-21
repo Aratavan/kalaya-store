@@ -11,19 +11,18 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout<{ dehydratedState?: 
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
-    // <MedusaProvider baseUrl={MEDUSA_BACKEND_URL} queryClientProviderProps={{ client: queryClient }}>
-    //   <Hydrate state={pageProps.dehydratedState}>
-    //     <CartProvider>
-    //       <StoreProvider>
-    //         <AccountProvider>
-    //           {getLayout(<Component {...pageProps} />)}
-    //         </AccountProvider>
-    //       </StoreProvider>
-    //     </CartProvider>
-    //   </Hydrate>
+    <MedusaProvider baseUrl={MEDUSA_BACKEND_URL} queryClientProviderProps={{ client: queryClient }}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <CartProvider>
+          <StoreProvider>
+            <AccountProvider>
+              {getLayout(<Component {...pageProps} />)}
+            </AccountProvider>
+          </StoreProvider>
+        </CartProvider>
+      </Hydrate>
 
-    // </MedusaProvider>
-    getLayout(<Component {...pageProps} />)
+    </MedusaProvider>
   )
 }
 

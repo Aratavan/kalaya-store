@@ -2,102 +2,59 @@ import BreadCrumb from "@modules/common/breadcrumb"
 import Line from "@modules/common/line"
 import ProductFooter from "@modules/common/product-footer"
 import QuantityCounter from "@modules/common/quantity-counter"
+import { medusaClient } from "@lib/config"
+import { IS_BROWSER } from "@lib/constants"
 import Layout from "@modules/layout/templates"
+import ProductInfoTemplate from "@modules/products/templates"
+import { useRouter } from "next/router"
 import { ReactElement } from "react"
-import { NextPageWithLayout } from "types/global"
+import { useQuery } from "react-query"
+import { NextPageWithLayout, PrefetchedPageProps } from "types/global"
 
-const ProductDetails: NextPageWithLayout = () => {
 
-    return (
-        <>
-            <BreadCrumb />
-            <Line />
-            <div className="product-deatails-container mx-[75px]">
-                <div className="details-section-1 flex flex-row mt-[45px] mb-[50px]">
-                    <div className="images-section flex flex-row  mr-[30px]">
-                        <div className="main-image w-[450px] h-[450px]  bg-slate-600 rounded-md">
-                        </div>
-                        <div className="image-thumbnails-contianer  flex flex-col">
-                            <div className="thumbnails m-2 mt-0 w-[140px] h-[140px] bg-slate-800 rounded-md">
-                            </div>
-                            <div className="thumbnails m-2 w-[140px] h-[140px] bg-slate-800 rounded-md">
-                            </div>
-                            <div className="thumbnails m-2 w-[140px] h-[140px] bg-slate-800 rounded-md">
-                            </div>
-                        </div>
-                    </div>
-                    <div className="content-section flex flex-col ml-[30px] ">
-                        <div className="product-name text-large p-[1px] text-lightGrey font-nunito">
-                            Kalaya Groundnut Oil
-                        </div>
-                        <Line />
-                        <div className="product-price pt-5 pb-1 text-large text-logo ">$ 10.99</div>
-                        <div className="product-desc text-black3e text-small font-nunito">
-                            Discover the traditional goodness of groundnut oil,
-                            in an advanced cold press method.
-                        </div>
-                        <div className="product-weight-container mb-3 mt-1">
-                            <div className="weight-label text-black my-3 text-medium">
-                                Weight Unit
-                            </div>
-                            <div className="weights-sections flex flex-row">
-                                <div className="weight w-[67px] h-[47px] flex justify-center items-center rounded-md border-logo border mr-1">
-                                    <span className="text-logo text-small">
-                                        1ltr
-                                    </span>
-                                </div>
-                                <div className="weight w-[67px] h-[47px] flex justify-center items-center rounded-md border-grey84 border ml-1">
-                                    <span className="text-small text-grey84">
-                                        500ml
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product-quantity-container my-3 flex flex-row">
-                            <QuantityCounter />
-                            <div className="add-cart-btn mx-2 px-[26px] py-[14px] text-white text-medium font-bold bg-logo rounded">
-                                Add To Cart
-                            </div>
-                            <div className="wishlist-btn mx-2 flex justify-center items-center">
-                                <img className="w-[40px] h-[35px]" src="/heart.svg" alt="wishlist button" />
-                            </div>
-                        </div>
-                        <div className="product-benifits font-nunito my-4">
-                            <div className="benifits-title text-medium font-bold text-black21">
-                                Benefits of Groundnut Oil
-                            </div>
-                            <div className="benifits-desc text-small text-black3e">
-                                Boosts your immune system, Reduces risk of heart diseases
-                                Helps to lower blood pressure, Helps to lower cholesterol levels
-                            </div>
+const fetchProduct = async (handle?: string) => {
+    return await medusaClient.products
+        .list()
+        .then(({ products }) => {
+            return products[0]
+        })
+            
+}
 
-                        </div>
-                    </div>
-                </div>
-                <div className="details-section-2 flex flex-row mt-[50px]">
-                    <div className="section-why w-[65%] mr-6 mb-12">
-                        <div className="why-title text-black10 text-large font-georgia font-bold flex-grow-0  mb-[18px]">
-                            Why People love Kalaya
-                        </div>
-                        <div className="why-para text-xmedium font-nunito text-black10">
-                            We source organically grown groundnut from family owned farms
-                            lorem ipsum is a placeholder text commonly used to demonstrate the visual
-                            form of a document or a typeface without relying on meaningful content.
-                        </div>
+const ProductDetails: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
 
-                    </div>
-                    <div className="section-why-image w-[35%] mt-[-50px] ml-6">
-                        <div className="bg-grey69">
-                            <img src="/ProductPage_Groundnut_image@2x.png" alt="nuts" />
-                        </div>
-                    </div>
+    const { query, isFallback, replace } = useRouter()
+    const handle = typeof query.handle === "string" ? query.handle : ""
 
-                </div>
-            </div>
-            <ProductFooter />
-        </>
+    const { data, isError, isLoading, isSuccess } = useQuery(
+        [`get_product`],
+        () => fetchProduct()
     )
+    if (notFound) {
+        if (IS_BROWSER) {
+            replace("/404")
+        }
 
+        return <div></div>
+    }
+
+    if (isError) {
+        replace("/404")
+    }
+
+    if(isLoading) {
+        <div>Loading...</div>
+    }
+
+    if (isSuccess) {
+        return (
+            <>
+            <ProductInfoTemplate product={data} />
+            <ProductFooter />
+            </>
+        )
+    }
+    return <></>
 }
 
 ProductDetails.getLayout = (page: ReactElement) => {
