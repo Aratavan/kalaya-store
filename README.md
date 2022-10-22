@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Kalaya Store
 
-## Getting Started
+https://drive.google.com/file/d/14DnuUWDr_19DTkPHGG8O_5NtGTwoMOjW/view?usp=sharing
 
-First, run the development server:
+Demo Video 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+https://drive.google.com/file/d/154x7P0M9wGvxRw5mB9EdvyZWcaZgq73o/view?usp=sharing
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+About
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Participants
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Harish M B  @harishmb51
+Kiran Thammaiah @kiran_thammaiah      
+Mahesh Nagaraj @maheshn1989
+Pradeep Kumar @pradeep_067
+Saravanan Perisamy @saravananp
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Description
 
-## Learn More
+Kalaya Store is built using Medusa framework. This E-commerce Store is built using Medusa and Next JS. It includes Home page, Product page, Order page, Checkout and Confirmation page. 
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Setup Project 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Prerequisites
+Nodejs - 16.18.0
+Medusa Server - Latest
 
-## Deploy on Vercel
+Install Project 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone the repository:
+git clone https://github.com/aratavan/kalaya-store.git
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Change directory and install dependencies: cd kalaya-store, npm install
+3. Start the app - npm run build, npm start
+
+Future Scope of Work : 
+
+Make the site responsive to mobile
+Implement previous order, Profile, Tracking of the order
