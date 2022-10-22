@@ -1,6 +1,7 @@
-Kalaya Store
+ Kalaya Store
 
-https://drive.google.com/file/d/14DnuUWDr_19DTkPHGG8O_5NtGTwoMOjW/view?usp=sharing
+![kalaya-cover-image](https://user-images.githubusercontent.com/113931134/197336885-82258a2f-eaf0-4d72-9c15-a587d91226b9.jpeg)
+
 
 Demo Video 
 
@@ -8,13 +9,17 @@ https://drive.google.com/file/d/154x7P0M9wGvxRw5mB9EdvyZWcaZgq73o/view?usp=shari
 
 About
 
-Participants
+Participants - Twitter handles
 
-Harish M B  @harishmb51
-Kiran Thammaiah @kiran_thammaiah      
-Mahesh Nagaraj @maheshn1989
-Pradeep Kumar @pradeep_067
-Saravanan Perisamy @saravananp
+Harish M B ( @harishmb51 )
+
+Kiran Thammaiah ( @kiran_thammaiah )
+     
+Mahesh Nagaraj ( @maheshn1989 )
+
+Pradeep Kumar ( @pradeep_067 )
+
+Saravanan Perisamy ( @saravananp )
 
 Description
 
