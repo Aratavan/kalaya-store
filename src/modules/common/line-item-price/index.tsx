@@ -23,7 +23,7 @@ const LineItemPrice = ({
   return (
   <>
       <span
-        className={clsx("text-base-regular", {
+        className={clsx("text-xxmedium", {
           "text-rose-600": hasReducedPrice,
         })}
       >

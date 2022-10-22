@@ -36,7 +36,7 @@ const CheckoutCard = ({ region }: checkoutProps) => {
                 </div>
                 <div className="item flex flex-row justify-between pb-2">
                     <span>Delivery Charges</span>
-                    <span>free</span>
+                    <span>{cart?.shipping_total}</span>
                 </div>
 
             </div>

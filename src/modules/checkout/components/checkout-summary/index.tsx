@@ -30,14 +30,20 @@ const CheckoutSummary = () => {
                 </div>
                 <div className="item flex flex-row justify-between pb-2">
                     <span>Delivery Charges</span>
-                    <span>Free</span>
+                    <span>
+                        {formatAmount({
+                            amount: cart?.shipping_total as number,
+                            region: cart?.region as Region,
+                            includeTaxes: false,
+                        })}
+                    </span>
                 </div>
 
             </div>
             <div className="product-total text-xxmedium font-nunito font-bold text-logo flex flex-row px-4 py-3 justify-between border-t border-greybf">
                 <div className="label">
                     Total
-                </div>
+                </div> 
                 <div className="price">
                     {formatAmount({
                         amount: cart?.total as number,

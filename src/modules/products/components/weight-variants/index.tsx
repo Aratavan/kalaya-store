@@ -18,7 +18,7 @@ const WeightVariant: React.FC<ProductTemplateProps> = ({ product }) => {
                 {
                     variants?.map((item) => {
                         return (
-                            <div onClick={ () => selectVariant(item)} key={item.id} className={ clsx("weight w-[67px] h-[47px] flex justify-center items-center text-small rounded-md  border mr-1", {"border-logo text-logo": item.id === selectedVariantId })}>
+                            <div onClick={ () => selectVariant(item)} key={item.id} className={ clsx("weight w-[67px] h-[47px] flex justify-center items-center text-small rounded-md  border mr-1 cursor-pointer", {"border-logo text-logo": item.id === selectedVariantId })}>
                                 <span>
                                     {item.title}
                                 </span>

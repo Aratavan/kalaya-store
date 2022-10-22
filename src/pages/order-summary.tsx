@@ -6,7 +6,7 @@ import { NextPageWithLayout } from "types/global";
 const Checkout: NextPageWithLayout = () => {
     return(
         <>
-            <OrderSummaryTemplate/>
+            {/* <OrderSummaryTemplate/> */}
         </>
     )
 }

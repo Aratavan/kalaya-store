@@ -6,26 +6,26 @@ import Line from "@modules/common/line"
 import ProductCard from "@modules/cart/components/product-card";
 import CheckoutCard from "@modules/checkout/components/checkout-card";
 import { useCart, useMeCustomer } from "medusa-react";
-import useEnrichedLineItems from "@lib/hooks/use-enrich-line-items";
 import EmptyCartMessage from "@modules/cart/components/empty-cart-message";
+import Spinner from "@modules/common/icons/spinner";
 
 
 const Mycart: NextPageWithLayout = () => {
 
     const { cart } = useCart()
-    const { customer, isLoading } = useMeCustomer()
-    const items = useEnrichedLineItems()
+    const { isLoading } = useMeCustomer()
+    const breadcrumbTitle = "My Cart"
 
     if(!cart || cart?.items?.length < 1) {
         return <EmptyCartMessage/>
     }
 
     if (!cart || !cart?.id?.length || isLoading) {
-        return (<div></div>)
+        return <Spinner/>
     }
     return (
         <>
-            <BreadCrumb />
+            <BreadCrumb title={breadcrumbTitle as string}/>
             <Line />
             <div className="my-cart-container flex flex-row">
                 <div className="section-left">

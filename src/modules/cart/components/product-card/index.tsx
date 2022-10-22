@@ -19,7 +19,7 @@ const ProductCard: React.FC<ItemProps> = ({ item, region }) => {
                 <img src="./Product Image.png"></img>
             </div>
             <div className="card-desc flex flex-col text-lightGrey justify-center">
-                <div className="title text-xxmedium">
+                <div className="title text-xxmedium font-nunito">
                     {item.title}
                 </div>
                 <div className="price font-nunito text-xxmedium font-bold">
@@ -45,7 +45,7 @@ const ProductCard: React.FC<ItemProps> = ({ item, region }) => {
                         price={item.total as number}
                     />
             </div>
-            <div onClick={()=> deleteItem(item?.id)} className="delete mr-5  flex flex-col justify-center">
+            <div onClick={()=> deleteItem(item?.id)} className="cursor-pointer delete mr-5  flex flex-col justify-center">
                 <img className="w-[22px] h-[18px]" src="/delete.svg" alt="delete" />
             </div>
         </div>

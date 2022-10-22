@@ -37,7 +37,7 @@ type AddressValues = {
 
 export type CheckoutFormValues = {
   shipping_address: AddressValues
-  billing_address?: AddressValues
+  billing_address: AddressValues
   email: string
 }
 
@@ -283,24 +283,14 @@ export const CheckoutProvider = ({ children }: CheckoutProviderProps) => {
    * Method that sets the addresses and email on the cart.
    */
   const setAddresses = (data: CheckoutFormValues) => {
-    const { shipping_address, email } = data
+    const { billing_address, email } = data
 
     const payload: StorePostCartsCartReq = {
-      shipping_address,
+      billing_address,
       email,
     }
-
-    // if (isEqual(shipping_address, billing_address)) {
-    //   sameAsBilling.open()
-    // }
-
-    payload.billing_address = shipping_address
-
-    // if (sameAsBilling.state) {
-    //   payload.billing_address = shipping_address
-    // } else {
-    //   payload.billing_address = billing_address
-    // }
+    payload.billing_address = billing_address
+    payload.shipping_address = billing_address
 
     updateCart(payload, {
       onSuccess: ({ cart }) => {

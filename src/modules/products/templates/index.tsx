@@ -14,11 +14,11 @@ export type ProductTemplateProps = {
 
 
 const ProductInfoTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
-
+    const breadcrumbTitle = "Product Details"
     return (
         <KalayaProductProvider product={product}>
             <>
-                <BreadCrumb />
+                <BreadCrumb title={breadcrumbTitle as string} />
                 <Line />
                 <div className="product-deatails-container mx-[75px]">
                     <div className="details-section-1 flex flex-row mt-[45px] mb-[50px]">
@@ -62,7 +62,7 @@ const ProductInfoTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
 
                         </div>
                         <div className="section-why-image w-[35%] h-[270px] ml-6">
-                            <div className="w-[432px] h-[270px] bg-grey69">
+                            <div className="w-[432px] h-[270px]">
                                 <img src="./product_ground_nut_details_image.png"></img>
                             </div>
                         </div>

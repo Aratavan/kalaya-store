@@ -34,7 +34,9 @@ const LandingPage = () => {
                         <p className="mt-5 font-nunito" style={{ fontSize: 'larger', lineHeight: '34px', color: '#101010' }}>Discover the traditional goodness of groundnut oil, in an<br />
                             advanced cold press method. Bring home oil today, and<br />
                             experience love in its healthiest form.</p>
-                        <button className="h-12 mt-7 px-6 font-semibold rounded-md text-white font-nunito" type="submit" style={{ background: '#9a3938' }}>ORDER NOW</button>
+                        <button className="h-12 mt-7 px-6 font-semibold rounded-md text-white font-nunito" type="submit" style={{ background: '#9a3938' }}>
+                            <Link href="/product-details" >ORDER NOW </Link>
+                        </button>
                     </div>
                 </div>
             </div>
