@@ -17,7 +17,16 @@ const OrderSummaryTemplate: React.FC<OrderCompletedTemplateProps> = ({ order }) 
             includeTaxes: false,
         })
     }
-    const {totalItems} = useCart()
+    const created_time = new Date(order.created_at).toLocaleDateString()
+    
+
+    const totalQuantity = () => {
+        let count = 0
+        order.items.forEach((item) => {
+            count = count + item.quantity
+        })
+        return count.toString()
+    }
     return (
         <>
             <div className="order-summary-container mt-10 mb-10">
@@ -49,13 +58,12 @@ const OrderSummaryTemplate: React.FC<OrderCompletedTemplateProps> = ({ order }) 
                             </div>
                         </div>
                     </div>
-                  
+
                     <div className="product-checkout-container flex">
-                        <>
+                        <div className=" flex flex-col">
                             {
                                 order?.items.map((item) => {
-                                    {item}
-                                   return <div className="card-container mt-8 flex flex-row border border-greybf  mx-[75px] rounded w-[80%] h-[150px] justify-around">
+                                    return <div className="card-container mt-8 flex flex-row border border-greybf  mx-[75px] rounded w-[80%] h-[150px] justify-around">
                                         <div className="card-image flex flex-col justify-center items-center m-6 rounded">
                                             <img className="w-[125px] h-[125px]" src="/Product Image.png"></img>
                                         </div>
@@ -67,29 +75,30 @@ const OrderSummaryTemplate: React.FC<OrderCompletedTemplateProps> = ({ order }) 
                                                 {priceFormat(item.unit_price)}
                                             </div>
                                             <div className="quantity text-medium">
-                                                {item.variant.title}
+                                                <span>{item.variant.title}</span>
                                             </div>
                                         </div>
-                                        <div className="card-quantity-count flex flex-col justify-center ml-11">
-                                            {item.quantity}
+                                        <div className="card-quantity-count flex flex-row justify-center items-center ml-11 font-nunito">
+                                            <span className="pr-2">Qty  </span>
+                                            <span>{item.quantity} </span>
                                         </div>
                                         <div className="total text-logo fonr-nunito text-[25px] font-bold flex flex-col justify-center mx-10">
-                                            {priceFormat(item.unit_price * item.quantity  as number)}
+                                            {priceFormat(item.unit_price * item.quantity as number)}
                                         </div>
                                     </div>
                                 })
                             }
-                        </>
+                        </div>
                         <div className="checkout-card-container w-[350px] h-[280px] mx-8">
                             <div className="product-checkout-container mt-8 bg-[#f9f9f9] border rounded border-[#d0d0d0]">
                                 <div className="product-details flex flex-col font-nunito font-normal text-black1d  text-[15px] justify-between px-4 py-4 ">
                                     <div className="item flex flex-row justify-between  pb-2">
                                         <span>Quantity</span>
-                                        {/* <span>{order.}</span> */}
+                                        <span>{totalQuantity()}</span>
                                     </div>
                                     <div className="item flex flex-row justify-between pb-2">
                                         <span>Order Date</span>
-                                        <span></span>
+                                        <span>{created_time}</span>
                                     </div>
                                     <div className="item flex flex-row justify-between pb-2">
                                         <span>Subtotal</span>

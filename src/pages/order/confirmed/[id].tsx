@@ -1,6 +1,7 @@
 import { medusaClient } from "@lib/config"
 import { IS_BROWSER } from "@lib/constants"
 import Spinner from "@modules/common/icons/spinner"
+import ProductFooter from "@modules/common/product-footer"
 import Layout from "@modules/layout/templates"
 import OrderSummaryTemplate from "@modules/order-summary/templates"
 import { GetStaticPaths, GetStaticProps } from "next"
@@ -44,6 +45,7 @@ const Confirmed: NextPageWithLayout = () => {
     return (
       <>
         <OrderSummaryTemplate order={data}/>
+        <ProductFooter />
       </>
     )
   }

@@ -1,5 +1,6 @@
 import { IS_BROWSER } from "@lib/constants";
 import CheckoutTemplate from "@modules/checkout/templates";
+import ProductFooter from "@modules/common/product-footer";
 import Layout from "@modules/layout/templates";
 import { useRouter } from "next/router";
 import { ReactElement } from "react";
@@ -15,7 +16,10 @@ const Checkout: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
         return <div></div>
     }
     return(
+        <>
         <CheckoutTemplate/>
+        <ProductFooter />
+        </>
     )
 }
 

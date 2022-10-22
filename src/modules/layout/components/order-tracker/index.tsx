@@ -7,7 +7,7 @@ const Ordertracker = () => {
             <div className="tracking-input w-[210px] h-[50px] p-[5px] border border-r-0 rounded">
                 <input className="w-full h-full bg-white outline-none"></input>
             </div>
-            <div className="tracking-btn text-logo px-5 py-3 h-[50px] text-small font-nunito font-bolder border rounded cursor-pointer" style={{ border: 'solid 1.5px #9a3938;' }}>
+            <div className="tracking-btn text-logo px-5 py-3 h-[50px] text-small font-nunito font-bolder border rounded cursor-pointer border-[solid 1.5px] border-logo">
                 <span>
                     TRACK ORDER
                 </span>

@@ -8,6 +8,7 @@ import CheckoutCard from "@modules/checkout/components/checkout-card";
 import { useCart, useMeCustomer } from "medusa-react";
 import EmptyCartMessage from "@modules/cart/components/empty-cart-message";
 import Spinner from "@modules/common/icons/spinner";
+import ProductFooter from "@modules/common/product-footer";
 
 
 const Mycart: NextPageWithLayout = () => {
@@ -45,6 +46,7 @@ const Mycart: NextPageWithLayout = () => {
                 </div>
 
             </div>
+            <ProductFooter />
         </>
     )
 

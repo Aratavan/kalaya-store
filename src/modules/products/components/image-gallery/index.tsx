@@ -8,7 +8,7 @@ const ImageGallery: React.FC<ProductTemplateProps> = ({ product }) => {
             </div>
             <div className="image-thumbnails-contianer  flex flex-col">
                 <div className="thumbnails m-2 mt-0 w-[140px] h-[140px] bg-slate-800 rounded-md">
-                    <img src="./Product Image.png"></img>
+                    <img src="./Big_Back.png"></img>
                 </div>
                 <div className="thumbnails m-2 w-[140px] h-[140px] bg-slate-800 rounded-md">
                     <img src="./Product Image.png"></img>
